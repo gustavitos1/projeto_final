@@ -136,7 +136,7 @@ def atualizar_movimentacao():
 
 if __name__ == '__main__':
     while True:
-        escolha = int(input("1 - funcionario\n2 - produto\n3 - Categoria\n4 - movimentação\n5 - Sair\nDigite aqui: "))
+        escolha = int(input("Menu\n1 - funcionario\n2 - produto\n3 - Categoria\n4 - movimentação\n5 - Sair\nDigite aqui: "))
         if escolha == 1:
             print('"escolha 1"')
             while True:
