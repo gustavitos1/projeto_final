@@ -25,17 +25,16 @@ def atualizar_funcionario():
     var_funcionario.email = str(input('Novo Email: '))
     var_funcionario.telefone = str(input('Novo Telefone: '))
     var_funcionario.data_de_cadastro = str(input('Novo Data de Cadastro: '))
-    db_session.commit()  # Confirme as alterações
+    db_session.commit()
 
 def deletar_funcionario():
     funcionario = db_session.query(Funcionario).filter_by(nome_funcionario=str(input('Nome: '))).first()
     print(funcionario)
-    db_session.delete(funcionario)  # Remova o funcionário da sessão
-    db_session.commit()  # Confirme as alterações
+    db_session.delete(funcionario)
+    db_session.commit()
 
 
 def inserir_produto():
-    """Create a new Produto instance and save it to the database."""
     produto = Produto(
         nome_produto=input('Nome do produto: '),
         preco_produto=int(input('Preço do produto: ')),
@@ -44,7 +43,6 @@ def inserir_produto():
     produto.save()
 
 def consulta_produtos():
-    """Retrieve all Produto instances from the database."""
     produtos = db_session.query(Produto).all()
     for produto in produtos:
         print(produto)
